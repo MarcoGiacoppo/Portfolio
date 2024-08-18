@@ -51,7 +51,7 @@ const Home: React.FC = () => {
   return (
     <section id='home' className="flex flex-col justify-center items-center h-[calc(100vh-128px)] md:h-[calc(100vh-16px)] px-10 py-20 bg-black text-white relative">
       <div className="absolute inset-0">
-        <BackgroundBeams/>
+        {!isSmall && <BackgroundBeams />}
       </div>
       <div className="relative z-10 w-full h-full flex justify-center items-center">
         {/* Background Ring */}
