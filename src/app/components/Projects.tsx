@@ -71,7 +71,9 @@ const Card = ({ card }: { card: CardType }) => {
   return (
     <div className="relative h-[300px] md:h-[450px] w-[350px] md:w-[600px] overflow-hidden bg-transparent rounded-lg p-[2px]">
       <div className="absolute inset-0">
-        <MovingBorder duration={12000} rx="20px" ry="20px" strokeWidth={2} children={undefined} />
+        <MovingBorder duration={12000} rx="20px" ry="20px" strokeWidth={2}>
+          <div /> {/* Empty div as placeholder */}
+        </MovingBorder>
       </div>
       
       <div className="relative bg-black rounded-lg w-full h-full flex flex-col justify-between p-4">

@@ -203,7 +203,7 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="xs:text-[9px] sm:text-sm md:text-xs text-xs text-center font-semibold text-neutral-500 mt-4">
-          Whether it's creating a new website or collaborating with creative agencies, I'm ready to deliver.
+          Whether it&apos;s creating a new website or collaborating with creative agencies, I&apos;m ready to deliver.
         </p>
         <p className="border border-orange-500 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Collaboration
@@ -250,7 +250,7 @@ const SkeletonFive = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-          I'm exploring various frameworks like React, Angular, and Vue to decide what's best for this proejct. What do you suggest?
+          I&apos;m exploring various frameworks like React, Angular, and Vue to decide what&apos;s best for this proejct. What do you suggest?
         </p>
       </motion.div>
 
