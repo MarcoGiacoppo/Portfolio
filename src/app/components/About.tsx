@@ -14,20 +14,55 @@ import { SiFirebase, SiKotlin, SiMysql, SiPostman, SiVisualstudiocode } from "re
 import { IoMdColorFill } from "react-icons/io";
 
 const About = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Stagger the appearance of children
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: (i: number) => ({
+      opacity: 0,
+      x: i % 2 === 0 ? -100 : 100, // Slide from left for even, right for odd items
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="about" className="p-8 bg-black">
-      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            className={cn("bg-black border border-[#333333]", item.className)}
-            icon={item.icon}
-          />
-        ))}
-      </BentoGrid>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-4xl mx-auto"
+      >
+        <BentoGrid className="md:auto-rows-[20rem]">
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              variants={itemVariants}
+              className={cn("bg-black border border-[#333333]", item.className)}
+            >
+              <BentoGridItem
+                title={item.title}
+                description={item.description}
+                header={item.header}
+                icon={item.icon}
+                className="bg-black border border-[#333333]"
+              />
+            </motion.div>
+          ))}
+        </BentoGrid>
+      </motion.div>
     </section>
   );
 };
