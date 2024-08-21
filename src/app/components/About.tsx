@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 
 import { cn } from "../lib/utils";
 
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 import { FaAndroid, FaCode, FaConnectdevelop, FaCss3Alt, FaFigma, FaGithub, FaHtml5, FaJs, FaLaptopCode, FaRocketchat } from "react-icons/fa";
@@ -14,6 +14,12 @@ import { SiFirebase, SiKotlin, SiMysql, SiPostman, SiVisualstudiocode } from "re
 import { IoMdColorFill } from "react-icons/io";
 
 const About = () => {
+  // Reference to the section
+  const ref = useRef(null);
+
+  // Check if the section is in view
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,11 +43,11 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="p-8 bg-black">
+    <section id="about" className="p-8 bg-black" ref={ref}>
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={isInView ? "visible" : "hidden"}
         className="max-w-4xl mx-auto"
       >
         <BentoGrid className="md:auto-rows-[20rem]">
