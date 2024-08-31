@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'projects', 'about', 'client', 'contact'];
+      const sections = ['home', 'projects', 'about', 'timeline', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       sections.forEach((section) => {
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
             >
-              {['home', 'projects', 'about', 'client', 'contact'].map((section) => (
+              {['home', 'projects', 'about', 'timeline', 'contact'].map((section) => (
                 <li
                   key={section}
                   className={`block px-4 py-2 text-sm cursor-pointer transition-colors duration-100 hover:bg-custom-gradient hover:bg-clip-text hover:text-transparent ${activeSection === section ? activeClassName : ''}`}
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
 
         {/* Full menu for larger screens */}
         <ul className="hidden md:flex space-x-8">
-          {['home', 'projects', 'about', 'client', 'contact'].map((section) => (
+          {['home', 'projects', 'about', 'timeline', 'contact'].map((section) => (
             <li
               key={section}
               className={`cursor-pointer transition-colors duration-100 hover:bg-custom-gradient hover:bg-clip-text hover:text-transparent ${activeSection === section ? activeClassName : ''}`}

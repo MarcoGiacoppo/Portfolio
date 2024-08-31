@@ -56,7 +56,7 @@ const About = () => {
               key={i}
               custom={i}
               variants={itemVariants}
-              className={cn("bg-black border border-[#333333]", item.className)}
+              className={cn("bg-black border-[#333333]", item.className)}
             >
               <BentoGridItem
                 title={item.title}
@@ -167,7 +167,7 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[8rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
